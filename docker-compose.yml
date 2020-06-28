@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api1:
+    build: ./api1
+    ports:
+      - "5000:80"
+  api2:
+    build: ./api2
+    ports:
+      - "5001:80"
+    environment:
+      URL_API1: http://api1:80
+      #URL_API1: http://localhost:5000
